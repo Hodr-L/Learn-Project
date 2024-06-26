@@ -26,7 +26,7 @@ Redis：全称为Remote Dictionary Server（远程数据服务）
 
 ​		**实现方式：**为缓存数据添加过期时长属性。
 
-![缓存与DBMS的关系](C:\Users\56314\Desktop\学习笔记\Redis学习笔记\img\缓存与DBMS的关系.png)
+![缓存与DBMS的关系](C:\Users\56314\Desktop\学习笔记二\Learn-Project\学习笔记\Redis学习笔记\img\缓存与DBMS的关系.png)
 
 ​		缓存层数据并不是在第一个用户访问时进行写入，而是服务器启动后warmup（预热）过程时，将基础性的数据写入到缓存中，例如阶段性同步数据。
 
@@ -76,7 +76,7 @@ Redis：全称为Remote Dictionary Server（远程数据服务）
 
 ​	对于Redis 3.0及其以前版本，Redis的IO模型是 纯粹的单线程模型。 即所有客户端的请求全部由一个线程处理。 这里的客户端指的是web服务器。
 
-​		![Redis的单线程模型示意图](C:\Users\56314\Desktop\学习笔记\Redis学习笔记\img\Redis的单线程模型示意图.jpg)
+​		![](C:\Users\56314\Desktop\学习笔记二\Learn-Project\学习笔记\Redis学习笔记\img\Redis的单线程模型示意图.jpg)
 
 ​	单线程采用**多路复用技术**。
 
@@ -108,7 +108,7 @@ Redis：全称为Remote Dictionary Server（远程数据服务）
 
 ​		单线程限制了实际的性能。
 
-![Redis的多线程模式](C:\Users\56314\Desktop\学习笔记\Redis学习笔记\img\Redis的多线程模式.png)
+![](C:\Users\56314\Desktop\学习笔记二\Learn-Project\学习笔记\Redis学习笔记\img\Redis的多线程模式.png)
 
 ​        多线程事件分发器，负载均衡，由IO解析并放入任务队列，交给主线程处理。这样不需要考虑线程安全问题，不需要考虑事务控制问题，也无需考虑LPUSH/LPOP 等命令执行顺序问题。
 
